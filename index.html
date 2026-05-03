@@ -1,18 +1,118 @@
-<!DOCTYPE html>
+
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Space Explorer</title>
+    <title>My Space Journey</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <canvas id="bg"></canvas>
     
-    <div class="content">
-        <h1>Welcome to My Solar System</h1>
-        <p>Explore the planets with your mouse!</p>
-    </div>
+    <main>
+        <section id="intro">
+            <h1>Hi, I'm Elizabeth</h1>
+            <p>(but my loved ones call me Iyin)</p>
+            <p class="subtitle">Welcome to my corner of the universe </p>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hi! My name is Iyinoluwa, but I go by Elizabeth and if you're close to me, you probably call me Iyin.
+             I usually introduce myself as Elizabeth because my full name can be a bit tricky to pronounce, 
+             but all versions of my name are a part of who I am.</p>
+            
+            <p>I've always had a deep love for space especially Saturn. 
+             I can't fully explain it, but there's just something about it that fascinates me. 
+             This website is kind of a passion project for me: a space where I can share facts about each planet while reconnecting with something I loved as a kid.
+             Even though my interests have expanded into other areas of science and technology, that curiosity about the universe never really left.</p>
+            
+            <p>Outside of that, I'm really into basketball. 
+             I play shooting guard and point guard, inspired by my favorite player, Steph Curry. 
+             My jersey number is usually 7 (because it just feels like a perfect number), but sometimes I wear 6 too.</p>
+            
+            <p>I'm also into crocheting, reading, and watching movies. 
+             I love going on walks, especially in the fall. It's easily my favorite season. 
+             I'm a huge Marvel fan and definitely an anime fan too. When I'm not doing that, I'm probably hanging out with friends or thinking about my next trip. 
+             So far, I've been to Dubai, Ghana, Niagara Falls, Toronto, and South Africa, and I'm hoping to visit places like Jerusalem or somewhere in Europe next.</p>
+            
+            <p>Looking ahead, I'm interested in becoming a biomechanical engineer or going into research medicine something that lets me explore science in a meaningful and innovative way.</p>
+            
+            <p class="closing-note">This site is a mix of my interests, my curiosity, and a little bit of nostalgia so yeah, welcome :)</p>
+        </section>
+        <section class="planet-section">
+            <div class="planet-info">
+               <h2>Mercury</h2>
+                <p class="planet-desc">The closest planet to the Sun and the smallest, it has no atmosphere and experiences extreme temperature shifts.</p>
+             </div>
+             <div id="mercury-container"></div>
+        </section>
+
+        <section class="planet-section">
+            <div class="planet-info">
+                <h2>Venus</h2>
+                <p class="planet-desc">The hottest planet with a thick, toxic atmosphere; it rotates clockwise and takes longer to rotate once than to orbit the Sun (a day is longer than a year).</p>
+            </div>
+            <div id="venus-container"></div>
+        </section>
+        
+        <section class="planet-section">
+            <div class="planet-info">
+                <h2>Earth</h2>
+                <p class="planet-desc">Our home planet, the only one known to support life and featuring surface water. 🌍</p>
+            </div>
+            <div id="earth-container"></div>
+        </section>
+
+        <section class="planet-section">
+            <div class="planet-info">
+                <h2>Mars</h2>
+                <p class="planet-desc">Known as the "Red Planet" due to rusty iron in its soil, it features the largest volcano in the solar system, Olympus Mons.</p>
+            </div>
+            <div id="mars-container"></div>
+        </section>
+
+        <section class="planet-section">
+            <div class="planet-info">
+                <h2>Jupiter</h2>
+                <p class="planet-desc">The largest planet, a gas giant with over 90 moons and a massive storm called the Great Red Spot.</p>
+            </div>
+            <div id="jupiter-container"></div>
+        </section>
+
+        <section class="planet-section special">
+            <div class="planet-info">
+                <h2>Saturn </h2>
+                <p class="planet-desc">Famous for its stunning, complex rings, it has the most extensive, visible ring system made of ice and rock.</p>
+                <p class="love-note">My absolute favorite. There's just something about those rings... 💫</p>
+            </div>
+            <div id="saturn-container"></div>
+        </section>
+
+         <section class="planet-section">
+            <div class="planet-info">
+                <h2>Uranus</h2>
+                <p class="planet-desc">An "ice giant" that rotates on its side, giving it unique seasons.</p>
+            </div>
+            <div id="uranus-container"></div>
+        </section>
+
+        <section class="planet-section">
+            <div class="planet-info">
+                <h2>Neptune</h2>
+                <p class="planet-desc">The most distant planet, known for its deep blue color and incredibly fast, high-speed winds.</p>
+            </div>
+            <div id="neptune-container"></div>
+        </section>
+
+        <section id="closing">
+            <h2>The Journey Continues</h2>
+            <p>From loving space as a kid to exploring biomechanics and medicine now.</p>
+            <p>Some things change, but curiosity? That stays forever.</p>
+            <p class="signature">- Elizabeth</p>
+        </section>
+    </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="script.js"></script>
