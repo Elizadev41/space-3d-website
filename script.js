@@ -11,6 +11,60 @@ document.addEventListener('DOMContentLoaded', function() {
         { name: 'uranus', container: 'uranus-container', texture: 'textures/72-the-solar-system/The Solar System/tex/uranus.jpg' },
         { name: 'neptune', container: 'neptune-container', texture: 'textures/72-the-solar-system/The Solar System/tex/neptune.jpg' }
     ];
+    
+// Background starfield setup
+const bgCanvas = document.getElementById('bg');
+if (bgCanvas) {
+    // Create scene for background
+    const bgScene = new THREE.Scene();
+    
+    // Create camera
+    const bgCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    bgCamera.position.z = 5;
+    
+    // Create renderer
+    const bgRenderer = new THREE.WebGLRenderer({ canvas: bgCanvas, antialias: true });
+    bgRenderer.setSize(window.innerWidth, window.innerHeight);
+    bgRenderer.setClearColor(0x000011); // Dark blue-black space color
+    
+    // Create stars
+    const starGeometry = new THREE.BufferGeometry();
+    const starCount = 1000;
+    const positions = new Float32Array(starCount * 3);
+    
+    for (let i = 0; i < starCount; i++) {
+        positions[i * 3] = (Math.random() - 0.5) * 100;     // x
+        positions[i * 3 + 1] = (Math.random() - 0.5) * 100; // y
+        positions[i * 3 + 2] = (Math.random() - 0.5) * 100; // z
+    }
+    
+    starGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    
+    const starMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.5 });
+    const stars = new THREE.Points(starGeometry, starMaterial);
+    bgScene.add(stars);
+    
+    // Animation function for background
+    function animateBackground() {
+        requestAnimationFrame(animateBackground);
+        
+        // Slowly rotate stars for subtle movement
+        stars.rotation.x += 0.0005;
+        stars.rotation.y += 0.0005;
+        
+        bgRenderer.render(bgScene, bgCamera);
+    }
+    
+    // Handle window resize for background
+    window.addEventListener('resize', function() {
+        bgCamera.aspect = window.innerWidth / window.innerHeight;
+        bgCamera.updateProjectionMatrix();
+        bgRenderer.setSize(window.innerWidth, window.innerHeight);
+    });
+    
+    // Start background animation
+    animateBackground();
+}
 
     // Store scenes and renderers for each planet
     const planetScenes = {};
